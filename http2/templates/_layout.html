@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>{% block title %}{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <div id="footer">
+            {% block footer %}
+            {% endblock %}
+        </div>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script>
+        $(document).ready(function(){
+            {% block script %}
+            {% endblock %}
+        });
+        </script>
+        <script>
+            //Name of the Customer Support Template: Pruebas
+            //Name of the Organization: Axians Spain
+            (function(document, script) {
+            var bubbleScript = document.createElement(script);
+            e = document.getElementsByTagName(script)[0];
+            bubbleScript.async = true;
+            bubbleScript.CiscoAppId =  'cisco-chat-bubble-app';
+            bubbleScript.appPrefix = '';
+            bubbleScript.DC = 'produs1.ciscoccservice.com';
+            bubbleScript.orgId = '3518ee67-db9d-4089-9471-b2c8218c59ec';
+            bubbleScript.templateId = 'c7c53c60-db41-11e9-a368-df8b1d957074';
+            bubbleScript.src = 'https://bubble.produs1.ciscoccservice.com/bubble.js';
+            bubbleScript.type = 'text/javascript';
+            bubbleScript.setAttribute('charset', 'utf-8');
+            e.parentNode.insertBefore(bubbleScript, e);
+            })(document, 'script');
+        </script>
+    </body>
+</html>

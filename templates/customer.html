@@ -1,0 +1,16 @@
+{% extends "_layout.html" %}
+{% block title %} {{ name }} {% endblock %}
+{% block head %}
+<link rel="shortcut icon" href="{{ url_for('static', filename='axians.ico') }}">
+{{ super() }}
+<style type="text/css">
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1> {{ name }} </h1>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
